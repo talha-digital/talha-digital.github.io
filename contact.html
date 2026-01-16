@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <!-- CSS style link  -->
+    <link rel="stylesheet" href="./index.css">
+    <!-- fontawesome icons link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Boxicons link  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- for testimonials -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <a href="./index.html" class="logo" style="color: black;">Muhammad <span>Talha</span></a>
+
+        <nav class="myNav">
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./skills.html">Skills</a>
+            <a href="./services.html">Services</a>
+            <a href="./portfolio.html">Portfolio</a>
+            <!-- <a href="#testimonial">Testimonials</a> -->
+            <a href="./contact.html">Contact</a>
+        </nav>
+
+        <a class="header-btn" href="./contact.html">
+            <!-- <i class="fas fa-envelope"></i>  Get a Quote -->
+            Get a Quote
+        </a>
+
+        <i class="fas fa-bars" id="menu-icon"></i>
+
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* ===============================
+               MOBILE MENU TOGGLE
+            ================================ */
+            const menuIcon = document.querySelector("#menu-icon");
+            const myNav = document.querySelector(".myNav");
+
+            if (menuIcon && myNav) {
+                menuIcon.addEventListener("click", () => {
+                    menuIcon.classList.toggle("fa-times");
+                    menuIcon.classList.toggle("rotate");
+                    myNav.classList.toggle("open");
+                });
+            }
+
+            /* ===============================
+               CLOSE MENU ON LINK CLICK (MOBILE)
+            ================================ */
+            document.querySelectorAll(".myNav a").forEach(link => {
+                link.addEventListener("click", () => {
+                    menuIcon.classList.remove("fa-times", "rotate");
+                    myNav.classList.remove("open");
+                });
+            });
+
+            /* ===============================
+               ACTIVE LINK BASED ON PAGE URL
+            ================================ */
+            const navLinks = document.querySelectorAll("header nav a");
+            const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute("href").split("/").pop();
+
+                if (linkPage === currentPage) {
+                    navLinks.forEach(l => l.classList.remove("active"));
+                    link.classList.add("active");
+                }
+            });
+
+            /* ===============================
+               RESET MENU ON SCROLL
+            ================================ */
+            window.addEventListener("scroll", () => {
+                menuIcon.classList.remove("fa-times", "rotate");
+                myNav.classList.remove("open");
+            });
+
+        });
+    </script>
+    <!----------------------------------------- contact section design  -->
+    <section class="contact" id="contact">
+
+        <p style="padding-top: 30px; padding-bottom: 30px; color: #7c3aed; font-size: 12px;"><i
+                class="fa fa-arrow-left"></i>
+            <a href="./index.html">Back to Home</a>
+        </p>
+
+        <div class="mn-text">
+            <span style="font-size: 1.5rem;">Let's Work <span style="color: black;">Together</span></span>
+            <h2 class="title heading">Conta<span>ct Now</span></h2>
+        </div>
+
+        <form id="contact-form">
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <input type="text" name="address/country" placeholder="Country" required>
+                    <input type="text" name="service" id="service" list="service-options" placeholder="Select a service"
+                        required>
+
+                    <datalist id="service-options">
+                        <option value="Web Development">
+                        <option value="UI/UX Design">
+                        <option value="SEO">
+                        <option value="Other">
+                    </datalist>
+
+
+
+                </div>
+            </div>
+
+            <div class="input-group-2">
+                <div class="input-box">
+                    <input type="text" name="subject" placeholder="Subject" required>
+                </div>
+                <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <input type="submit" name="submit" value="Submit" class="form-btn">
+            </div>
+        </form>
+
+    </section>
+
+    <script>
+        //========================================================== contact form 
+        document.addEventListener("DOMContentLoaded", function () {
+            emailjs.init("LcRmm8pM-PCXVlQTk");
+
+            document.getElementById("contact-form").addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                emailjs.sendForm(
+                    "service_31bk5au",
+                    "template_28r4o3p",
+                    this
+                ).then(
+                    function () {
+                        alert("Message sent successfully!");
+                        document.getElementById("contact-form").reset();
+                    },
+                    function (error) {
+                        alert("Failed to send message. Please try again.");
+                        console.error(error);
+                    }
+                );
+            });
+        });
+    </script>
+
+
+    <!-- --------------------------------------- footer design  -->
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+            <a href="#"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
+        <ul class="list">
+            <li><a href="./about.html">About Me</a></li>
+            <li><a href="./skills.html">Skills</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./portfolio.html">Portfolio</a></li>
+            <!-- <li><a href="#testimonial">Testimonials</a></li> -->
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <p class="copyright">
+            &copy <a href="./index.html" style="color: white;">Muhammad Talha</a> | All Rights Reserved
+        </p>
+    </footer>
+
+    <!-- ================= FLOATING CONTACT BUTTONS (RIGHT) ================= -->
+    <div class="contact-floating">
+
+        <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn" data-tip="Chat on WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+
+        <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Send an Email">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+        </a>
+
+        <a href="tel:+923255193936" class="contact-btn call-btn" data-tip="Call Me">
+            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Call">
+        </a>
+
+    </div>
+
+    <!-- ================= FLOATING VIDEO BUTTON (LEFT) ================= -->
+    <a onclick="openVideoModal()" class="video-float-btn" data-tip="Watch Intro Video">
+        <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Video">
+    </a>
+
+    <!-- ================= VIDEO MODAL ================= -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-close" onclick="closeVideoModal()">&times;</span>
+            <video controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+
+
+    <script>
+        function openVideoModal() {
+            document.getElementById("videoModal").style.display = "flex";
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById("videoModal");
+            const video = modal.querySelector("video");
+            modal.style.display = "none";
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        function openEmail() {
+            const email = "talha.digital.co@gmail.com";
+            const subject = "Contact from Portfolio";
+            const body = "Hello Talha,%0A%0AI would like to contact you regarding your services.%0A%0AThanks!";
+
+            window.open(
+                `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`,
+                "_blank"
+            );
+        }
+
+        function openWhatsApp() {
+            const phone = "923255193936";
+            const message = "Hello Talha,%0A%0AI would like to contact you regarding your services.%0A%0AThanks!";
+
+            window.open(
+                `https://wa.me/${phone}?text=${message}`,
+                "_blank"
+            );
+        }
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6936b49ff12e97197d5eb8cd/1jbur34aq';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <!-- ================= BACK TO TOP BUTTON ================= -->
+    <button id="backToTopBtn" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <style>
+        /* Back to top button */
+        #backToTopBtn {
+            position: fixed;
+            left: 20px;
+            bottom: 30px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--my-main-color);
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        #backToTopBtn:hover {
+            transform: translateY(-4px);
+            background-color: #9333ea;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            #backToTopBtn {
+                left: 15px;
+                bottom: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const backToTopBtn = document.getElementById("backToTopBtn");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.display = "block";
+                } else {
+                    backToTopBtn.style.display = "none";
+                }
+            });
+
+            backToTopBtn.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+    <!-- ===================================================== -->
+
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- typed js  -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- custom js   -->
+    <script src="./index.js"></script>
+
+    <!-- for email button/ -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <!-- for testimonials  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+
+
+</body>
+
+</html>

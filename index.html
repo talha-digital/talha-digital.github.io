@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./1.jpeg">
+    <title>Muhammad Talha</title>
+
+    <!-- CSS style link  -->
+    <link rel="stylesheet" href="./index.css">
+    <!-- fontawesome icons link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Boxicons link  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- for testimonials -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <a href="#home" class="logo" style="color: black;">Muhammad <span>Talha</span></a>
+
+        <nav class="myNav">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#services">Services</a>
+            <a href="#project">Portfolio</a>
+            <a href="#testimonial">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="header-btn" href="#contact">
+            <!-- <i class="fas fa-envelope"></i>  Get a Quote -->
+            Get a Quote
+        </a>
+
+        <i class="fas fa-bars" id="menu-icon"></i>
+
+    </header>
+
+    <script>
+        // -----------------------  toggler icon navbar
+        let menuIcon = document.querySelector("#menu-icon");
+        let myNav = document.querySelector(".myNav");
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle("fa-times");
+            myNav.classList.toggle("open");
+            menuIcon.classList.toggle("rotate");
+        }
+
+        window.onscroll = () => {
+            menuIcon.classList.remove("fa-times");
+            myNav.classList.remove("open");
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // Run scroll spy ONLY on homepage
+            if (!window.location.pathname.includes("index.html") &&
+                window.location.pathname !== "/" &&
+                window.location.pathname !== "") {
+                return;
+            }
+
+            let sections = document.querySelectorAll("section");
+            let navlinks = document.querySelectorAll("header nav a");
+
+            window.addEventListener("scroll", () => {
+                let top = window.scrollY;
+
+                sections.forEach(sec => {
+                    let offset = sec.offsetTop - 150;
+                    let height = sec.offsetHeight;
+                    let id = sec.getAttribute("id");
+
+                    if (top >= offset && top < offset + height) {
+                        navlinks.forEach(link => link.classList.remove("active"));
+                        let targetLink = document.querySelector(
+                            'header nav a[href="#' + id + '"]'
+                        );
+                        if (targetLink) targetLink.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- ================= HOME SECTION ================= -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, <span>I'm</span></h3>
+            <h1>Muhammad Talha</h1>
+            <h3>And I'm a <span class="multiple-text">Full </span></h3>
+            <p>I’m a versatile Digital Solutions Expert, combining full-stack web development, AI-powered visual design,
+                and advanced automation to deliver high-impact results. From building WordPress, Shopify, and custom
+                websites to crafting stunning brand identities, marketing creatives, and packaging designs, I help
+                businesses stand out. I also specialize in workflow automation, advanced Excel solutions, and system
+                optimization, ensuring efficient processes and scalable growth for my clients.</p>
+
+            <div class="social-media">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+                <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+                <a href="#"><i class="bx bxl-linkedin"></i></a>
+            </div>
+
+        </div>
+
+        <div class="home-img">
+            <img src="./1.jpeg" alt="">
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section class="about-section" id="about">
+        <div style="text-align: center;">
+            <span style="font-size: 1.5rem; color: black;" class="animate"><span>Why</span> Me!</span>
+        </div>
+
+        <h2 class="about-title heading">About <span>Me</span></h2>
+
+        <div class="about-grid">
+
+            <!-- EXPERIENCE -->
+            <div class="card about-box reveal">
+                <h3>Experience</h3>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div>
+                            <h4>Full-Stack Web Developer</h4>
+                            <h5>2024 – Present | Saleswaly Marketing Agency</h5>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div>
+                            <h4>AI Graphic & Visual Designer</h4>
+                            <h5>2024 – 2026 | Saleswaly Marketing Agency</h5>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div>
+                            <h4>Branding & Marketing Creative Expert</h4>
+                            <h5>2024 – 2025 | Saleswaly Marketing Agency</h5>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div>
+                            <h4>Technical Specialist & Troubleshooter</h4>
+                            <h5>2024 – 2026 | Saleswaly Marketing Agency</h5>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div>
+                            <h4>Automation & Advanced Excel Specialist</h4>
+                            <h5>2024 – 2026 | Saleswaly Marketing Agency</h5>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- About CTA -->
+
+                <div style="display: flex; justify-content: center;">
+                    <!-- Email Button -->
+                    <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Get a Free Quotation">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+                    </a>
+
+                    <a href="./about.html" class="resume-btn">See My Full Experience</a>
+
+                    <a href="tel:+923255193936" class="contact-btn call-btn"
+                        data-tip="Call now! I’m available to assist you anytime">
+                        <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Call Icon">
+                    </a>
+
+                </div>
+
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="right-column">
+
+                <!-- EDUCATION -->
+                <div class="card about-box reveal">
+                    <h3>Education</h3>
+
+                    <div class="edu-cards">
+                        <div class="edu-card">
+                            <h4>Bachelor’s Degree</h4>
+                            <p>Software Engineering</p>
+
+                            <h4>A-Levels</h4>
+                            <p>Pre-Engineering</p>
+                        </div>
+
+                        <div class="edu-card">
+                            <h4>Diploma</h4>
+                            <ol>
+                                <li>Full-Stack Web Development</li>
+                                <li>Graphic Designing</li>
+                                <li>AI Graphics & Visual Creative</li>
+                                <li>Advanced Excel & Automation</li>
+                            </ol>
+                        </div>
+
+                        <div class="edu-card">
+                            <h4>Certifications</h4>
+                            <ol>
+                                <li>Full-Stack Web Development</li>
+                                <li>Graphic Designer</li>
+                            </ol>
+                            <div style="display: flex; justify-content: center; margin-top: 30px;">
+                                <!-- Email Button -->
+                                <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Get a Free Quotation">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg"
+                                        alt="Email">
+                                </a>
+                                <!-- WhatsApp Button -->
+                                <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn"
+                                    data-tip="Have a project in mind? Let’s discuss!">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                                        alt="WhatsApp">
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: center; margin-top: 15px;">
+                        <a href="./My Resume.pdf" class="resume-btn">View/Download My Resume</a>
+                    </div>
+
+                </div>
+
+                <!-- BRANDS -->
+                <div class="card about-box reveal">
+                    <h3>Brands I Work With</h3>
+
+                    <ol class="brands-list">
+                        <li><b>GO FAST BITS PTY LTD, Australia</b> – Advanced Excel / Google Sheets Automation</li>
+                        <li><b>PrinceFancy.com</b> – Shopify Store Backend Improvements & Changes</li>
+                        <li><b>DenOfTech.co.uk</b> – Website Improvements</li>
+                        <li><b>InteriorWorksCompany.com</b> – Complete Website Setup / Creation</li>
+                        <li><b>AC (Australian Cinematography)</b> – Complete Pricing Engine Setup</li>
+                    </ol>
+                    <div style="display: flex; justify-content: center; margin-top: 15px;">
+                        <!-- WhatsApp Button -->
+                        <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn"
+                            data-tip="Have a project in mind? Let’s discuss!">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                        </a>
+
+                        <a href="./about.html" class="resume-btn">View All Brands I Worked With...</a>
+
+                    </div>
+                </div>
+
+
+                <!-- STATS -->
+                <div class="card about-box reveal stats-section">
+                    <h3>Quick Stats</h3>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4 data-target="50">0</h4>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 data-target="30">0</h4>
+                            <p>Clients</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 data-target="2">0</h4>
+                            <p>Years</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 data-target="100">0</h4>
+                            <p>Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= JS ================= -->
+    <script>
+        const reveals = document.querySelectorAll(".reveal");
+
+        window.addEventListener("scroll", () => {
+            reveals.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        });
+
+        let animated = false;
+        window.addEventListener("scroll", () => {
+            const stats = document.querySelector(".stats-section");
+            if (!stats || animated) return;
+
+            if (stats.classList.contains("active")) {
+                document.querySelectorAll(".stat-card h4").forEach(counter => {
+                    const target = +counter.dataset.target;
+                    let count = 0;
+
+                    const interval = setInterval(() => {
+                        count++;
+                        counter.innerText = count;
+                        if (count >= target) {
+                            counter.innerText = target + (target === 100 ? "%" : "+");
+                            clearInterval(interval);
+                        }
+                    }, 20);
+                });
+                animated = true;
+            }
+        });
+    </script>
+
+
+    <!-- ====================================== SKILLS SECTION ================== -->
+    <section class="skills" id="skills">
+        <div class="main-text">
+            <span style="font-size: 1.5rem; color: black;">
+                <span>Technical &</span> Professional
+            </span>
+            <h2 class="heading"><span style="color: black;">MY</span> Skills</h2>
+        </div>
+
+        <div class="skill-main">
+            <!-- LEFT -->
+            <div class="skill-left">
+                <h3>Technical Skills</h3>
+
+                <div class="skill-bar">
+                    <div class="info">
+                        <p>Full-Stack Web Development</p>
+                        <p>80%</p>
+                    </div>
+                    <div class="bar"><span class="fullstack"></span></div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="info">
+                        <p>E-Commerce Development & Optimization</p>
+                        <p>90%</p>
+                    </div>
+                    <div class="bar"><span class="ecommerce"></span></div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="info">
+                        <p>Advanced Excel & Google Sheets Automation</p>
+                        <p>90%</p>
+                    </div>
+                    <div class="bar"><span class="excel"></span></div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="info">
+                        <p>Business Workflow & Document Automation</p>
+                        <p>85%</p>
+                    </div>
+                    <div class="bar"><span class="workflow"></span></div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="info">
+                        <p>AI Graphics & Visual Content Creation</p>
+                        <p>88%</p>
+                    </div>
+                    <div class="bar"><span class="ai-graphics"></span></div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="info">
+                        <p>Custom UI/UX Design & Implementation</p>
+                        <p>70%</p>
+                    </div>
+                    <div class="bar"><span class="uiux"></span></div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="info">
+                        <p>Website Performance Optimization (Core Web Vitals)</p>
+                        <p>85%</p>
+                    </div>
+                    <div class="bar"><span class="performance"></span></div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="skill-right">
+                <h3>Professional Skills</h3>
+                <div class="professional">
+                    <div class="box">
+                        <div class="circle" data-dots="80" data-percent="90"></div>
+                        <div class="text">
+                            <big>90%</big>
+                            <small>Problem Solving & Technical Troubleshooting</small>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="circle" data-dots="80" data-percent="94"></div>
+                        <div class="text">
+                            <big>94%</big>
+                            <small>Client Communication & Requirement Analysis</small>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="circle" data-dots="80" data-percent="99"></div>
+                        <div class="text">
+                            <big>99%</big>
+                            <small>Attention to Detail & Quality Assurance</small>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="circle" data-dots="80" data-percent="90"></div>
+                        <div class="text">
+                            <big>90%</big>
+                            <small>Project Ownership & Responsibility</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; margin-top: 15px;">
+            <!-- Email Button -->
+            <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Get a Free Quotation">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+            </a>
+
+            <a href="./skills.html" class="resume-btn">View My All Skills</a>
+
+            <!-- WhatsApp Button -->
+            <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn"
+                data-tip="Have a project in mind? Let’s discuss!">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+
+            <!-- Call Button -->
+            <a href="tel:+923255193936" class="contact-btn call-btn"
+                data-tip="Call now! I’m available to assist you anytime">
+                <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Call Icon">
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!----------------------------------------- services section design  -->
+    <section class="section portfolio service" id="services">
+        <div class="mn-text">
+            <span style="font-size: 1.5rem;">What I can <span style="color: black;">Do For You</span></span>
+            <h2 class="title heading">Serv<span>ices</span></h2>
+        </div>
+
+        <div class="tab-grid work active style">
+
+            <div class="tab-item portfolio-item">
+                <div class="portfolio-icon service-icon">
+                    <i class="bx bx-code-alt icon"></i>
+
+                    <i style="display: flex; gap: 10px; align-items: center;">
+
+                        <!-- WhatsApp Button -->
+                        <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn"
+                            data-tip="Have a project in mind? Let’s discuss!">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                        </a>
+
+                    </i>
+
+                </div>
+
+                <h4>Full-Stack Website Development</h4>
+                <p>WordPress, Shopify, Squarespace Development. Custom HTML, CSS & JavaScript Websites. Responsive &
+                    Mobile-First Design. Website Redesign & Performance Optimization. Core Web Vitals & Accessibility
+                    (WCAG 2.1 AA) Improvements.</p>
+            </div>
+
+            <div class="tab-item portfolio-item">
+                <div class="portfolio-icon service-icon">
+                    <i class="bx bx-code-alt icon"></i>
+
+                    <i style="display: flex; gap: 10px; align-items: center;">
+
+                        <!-- Email Button -->
+                        <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Get a Free Quotation">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg"
+                                alt="Email">
+                        </a>
+
+                    </i>
+
+                </div>
+                <h4>Advanced Excel & Business Automation</h4>
+                <p>Pricing, Quoting & Licensing Systems. Excel → Word → PDF Document Automation. Reporting Dashboards &
+                    Data Management. Workflow Automation for Business Operations.</p>
+            </div>
+
+            <div class="tab-item portfolio-item">
+                <div class="portfolio-icon service-icon">
+                    <i class="bx bx-code-alt icon"></i>
+
+                    <i style="display: flex; gap: 10px; align-items: center;">
+
+                        <!-- Call Button -->
+                        <a href="tel:+923255193936" class="contact-btn call-btn"
+                            data-tip="Call now! I’m available to assist you anytime">
+                            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Call Icon">
+                        </a>
+
+                    </i>
+
+                </div>
+                <h4>AI Graphic & Visual Design</h4>
+                <p>AI-Generated Visuals & Creative Assets. Social Media Post Design. Marketing Creatives & Ad Visuals.
+                    Pattern & Packaging Design. High-Impact Visual Content Creation</p>
+            </div>
+
+            <div class="tab-item portfolio-item">
+                <div class="portfolio-icon service-icon">
+                    <i class="bx bx-code-alt icon"></i>
+
+                    <i style="display: flex; gap: 10px; align-items: center;">
+                        <!-- Call Button -->
+                        <a href="tel:+923255193936" class="contact-btn call-btn"
+                            data-tip="Call now! I’m available to assist you anytime">
+                            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Call Icon">
+                        </a>
+
+                    </i>
+
+                </div>
+                <h4>Branding & Creative Design</h4>
+                <p>Logo Design & Brand Identity. Complete Business Branding Solutions. Brochures, Flyers & Business
+                    Cards. Print & Digital Marketing Materials</p>
+            </div>
+
+            <div class="tab-item portfolio-item">
+                <div class="portfolio-icon service-icon">
+                    <i class="bx bx-code-alt icon"></i>
+
+                    <i style="display: flex; gap: 10px; align-items: center;">
+
+                        <!-- WhatsApp Button -->
+                        <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn"
+                            data-tip="Have a project in mind? Let’s discuss!">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                        </a>
+
+                    </i>
+
+                </div>
+                <h4>Website Troubleshooting & Technical Support</h4>
+                <p>Website Issue Diagnosis & Fixes. Speed, Security & Performance Improvements. Plugin, Theme & Backend
+                    Fixes. Ongoing Website Maintenance & Support</p>
+            </div>
+
+            <div class="tab-item portfolio-item">
+                <div class="portfolio-icon service-icon">
+                    <i class="bx bx-code-alt icon"></i>
+
+                    <i style="display: flex; gap: 10px; align-items: center;">
+
+                        <!-- Email Button -->
+                        <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Get a Free Quotation">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg"
+                                alt="Email">
+                        </a>
+
+                    </i>
+
+                </div>
+                <h4>Packaging Design</h4>
+                <p>All Types of Packaging Design (Small to Large Scale). Food Packaging (Biscuits, Snacks, Tora, FMCG
+                    Products). Paper, Box, Pouch, Label & Wrapper Designs. Retail, E-Commerce & Export Packaging.
+                    Print-Ready & Manufacturer-Compliant Files</p>
+            </div>
+
+            <div class="tab-item portfolio-item">
+                <div class="portfolio-icon service-icon">
+                    <i class="bx bx-code-alt icon"></i>
+
+                    <i style="display: flex; gap: 10px; align-items: center;">
+
+                        <!-- WhatsApp Button -->
+                        <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn"
+                            data-tip="Have a project in mind? Let’s discuss!">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                        </a>
+
+                    </i>
+
+                </div>
+                <h4>Pattern Design</h4>
+                <p>Custom Pattern Design for All Product Types. Footwear Patterns (Shoes, Sandals, Soles). Leather &
+                    Rexine Products (Jackets, Bags, Wallets, Covers). Handbags, Pouches & Accessories. Apparel & Fashion
+                    Product Patterns. Print-Ready & Production-Ready Pattern Files. <b>Stock Material & Pattern Supply
+                        Available After Design Creation</b></p>
+            </div>
+
+            <div class="tab-item portfolio-item">
+                <div class="portfolio-icon service-icon">
+                    <i class="bx bx-code-alt icon"></i>
+
+                    <i style="display: flex; gap: 10px; align-items: center;">
+
+                        <!-- Email Button -->
+                        <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Get a Free Quotation">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg"
+                                alt="Email">
+                        </a>
+
+                    </i>
+
+                </div>
+                <h4>Reports, Dashboards & Analytics</h4>
+                <p>Search Console & Looker Studio Report Templates. Sales & Performance Tracking Sheets. Business
+                    Insights & Data Visualization
+                </p>
+            </div>
+
+        </div>
+
+        <div style="display: flex; justify-content: center; margin-top: 15px;">
+
+            <!-- WhatsApp Button -->
+            <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn"
+                data-tip="Have a project in mind? Let’s discuss!">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+
+            <a href="./services.html" class="resume-btn">View All Services</a>
+
+            <!-- Email Button -->
+            <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Get a Free Quotation">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+    <!-------------------------------------------------
+  PORTFOLIO / PROJECT SECTION
+-------------------------------------------------->
+
+    <section id="project">
+
+        <!-- Section Heading -->
+        <div class="mn-text">
+            <span style="font-size: 1.5rem;">
+                What I hav<span style="color: black;">e Done Yet</span>
+            </span>
+            <h2 class="title heading">Port<span>folio</span></h2>
+        </div>
+
+        <div class="project-container">
+
+            <!-- ===== Filters ===== -->
+            <ul class="project-filters">
+                <li class="active" data-filter="all">All</li>
+                <li data-filter="websites">Websites</li>
+                <li data-filter="graphics">Graphics</li>
+                <li data-filter="ai">AI</li>
+                <!-- <li data-filter="ecommerce">E-Commerce</li> -->
+                <li data-filter="packaging">Packaging Design</li>
+                <!-- <li data-filter="pattern">Pattern Design</li> -->
+                <li data-filter="excel">Excel & Dashboards</li>
+            </ul>
+
+            <!-- ===== Project Grid ===== -->
+            <div class="project-grid">
+
+                <!--================================================ websitessss......  -->
+                <!-- Website project 1 ( IWC ) -->
+                <div class="project-item websites">
+                    <img src="./websites/iwc.jpeg" alt="IWC Website">
+                    <div class="project-overlay">
+                        <h3>IWC Site Setup</h3>
+                        <p>WordPress Website</p>
+                        <button class="project-preview-btn" data-type="link"
+                            data-src="https://interiorworkscompany.com/">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 2 ( AC Studio ) -->
+                <div class="project-item websites">
+                    <img src="./websites/ac2.jpeg" alt="Australian Cinematography Studio">
+                    <div class="project-overlay">
+                        <h3>Australian Cinematography Studio</h3>
+                        <p>Landing Page</p>
+                        <button class="project-preview-btn" data-project="ac">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 3 ( casalusso ) -->
+                <div class="project-item websites">
+                    <img src="./websites/casa1.png" alt="Casalusso Website">
+                    <div class="project-overlay">
+                        <h3>Casalusso Website</h3>
+                        <p>WordPress</p>
+                        <button class="project-preview-btn" data-type="link" data-src="https://casalussopk.com/">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 4 ( AC Studio ) -->
+                <div class="project-item websites">
+                    <img src="./websites/fu.jpeg" alt="Fujiappliances">
+                    <div class="project-overlay">
+                        <h3>Fujiappliances.com</h3>
+                        <p>Wordpress Website</p>
+                        <button class="project-preview-btn" data-project="fu">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 5 ( prince fancy ) -->
+                <div class="project-item websites">
+                    <img src="./websites/prfa4.jpeg" alt="Store Backend Integration">
+                    <div class="project-overlay">
+                        <h3>Store Backend Integration</h3>
+                        <p>Shopify Store</p>
+                        <button class="project-preview-btn" data-project="prfa">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 6 ( wcag 2.1 aa testing ) -->
+                <div class="project-item websites">
+                    <img src="./websites/wcag1.jpeg" alt="WCAG 2.1 AA Testing">
+                    <div class="project-overlay">
+                        <h3>WCAG 2.1 AA Testing</h3>
+                        <p>Website Performance Testing</p>
+                        <button class="project-preview-btn" data-project="wcag">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 7 ( newoffice website ) -->
+                <div class="project-item websites">
+                    <img src="./websites/nof1.jpeg" alt="NewOffice Website">
+                    <div class="project-overlay">
+                        <h3>NewOffice Website</h3>
+                        <p>Wordpress</p>
+                        <button class="project-preview-btn" data-project="nof">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 8 ( HR realestate website ) -->
+                <div class="project-item websites">
+                    <img src="./websites/hr2.jpeg" alt="HR realestate website">
+                    <div class="project-overlay">
+                        <h3>HR RealEstate Website</h3>
+                        <p>Wordpress</p>
+                        <button class="project-preview-btn" data-project="hr">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 9 ( Isplash website ) -->
+                <div class="project-item websites">
+                    <img src="./websites/isp1.jpeg" alt="Isplash Car Detailing">
+                    <div class="project-overlay">
+                        <h3>Isplash Car Detailing Site</h3>
+                        <p>Wordpress</p>
+                        <button class="project-preview-btn" data-project="isp">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 10 ( sahir properties website ) -->
+                <div class="project-item websites">
+                    <img src="./websites/shr1.jpeg" alt="Sahir Properties">
+                    <div class="project-overlay">
+                        <h3>Sahir Properties - RealEstate Site</h3>
+                        <p>Wordpress</p>
+                        <button class="project-preview-btn" data-project="shr">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 11 ( diamond realestate website ) -->
+                <div class="project-item websites">
+                    <img src="./websites/dia1.jpeg" alt="Diamond realestate website">
+                    <div class="project-overlay">
+                        <h3>Diamond RealEstate Website</h3>
+                        <p>Wordpress</p>
+                        <button class="project-preview-btn" data-project="dia">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!--================================================ graphicsss......  -->
+                <!-- Graphics project 1 ( ez logos ) -->
+                <div class="project-item graphics">
+                    <img src="./graphics/lg2.webp" alt="EZ Combination">
+                    <div class="project-overlay">
+                        <h3>EZ Combination</h3>
+                        <p>Logos - Illustrator</p>
+                        <button class="project-preview-btn" data-project="ezlg">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 2 ( Tech logos ) -->
+                <div class="project-item graphics">
+                    <img src="./graphics/lg1.jpeg" alt="Tech Related Logos">
+                    <div class="project-overlay">
+                        <h3>Tech Related Logos</h3>
+                        <p>Illustrator</p>
+                        <button class="project-preview-btn" data-project="telg">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 3 ( brand logos ) -->
+                <div class="project-item graphics">
+                    <img src="./graphics/lg6.png" alt="Brand Logos">
+                    <div class="project-overlay">
+                        <h3>Brand Logos</h3>
+                        <p>Illustrator</p>
+                        <button class="project-preview-btn" data-project="bnlg">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 4 ( cover photos ) -->
+                <div class="project-item graphics">
+                    <img src="./graphics/cp2.png" alt="Cover Photos">
+                    <div class="project-overlay">
+                        <h3>Cover Photos</h3>
+                        <p>Illustrator - Canva</p>
+                        <button class="project-preview-btn" data-project="cp">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 5 ( buisness cards ) -->
+                <div class="project-item graphics">
+                    <img src="./graphics/bc2.png" alt="Buisness Cards">
+                    <div class="project-overlay">
+                        <h3>Buisness Cards</h3>
+                        <p>Illustrator - Canva</p>
+                        <button class="project-preview-btn" data-project="bc">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 6 ( mockups ) -->
+                <div class="project-item graphics">
+                    <img src="./graphics/mk2.png" alt="Mockups Design">
+                    <div class="project-overlay">
+                        <h3>Mockups Design</h3>
+                        <p>Illustrator - Canva</p>
+                        <button class="project-preview-btn" data-project="mk">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 7 ( image optimization ) -->
+                <div class="project-item graphics">
+                    <img src="./graphics/en2.jpg" alt="Images Enhancement">
+                    <div class="project-overlay">
+                        <h3>Images Enhancement</h3>
+                        <p>Photoshop</p>
+                        <button class="project-preview-btn" data-project="en">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 8 ( banner design ) -->
+                <div class="project-item graphics">
+                    <img src="./graphics/bn1.jpg" alt="Banner Designs">
+                    <div class="project-overlay">
+                        <h3>Banner Designs</h3>
+                        <p>Illustrator - Canva</p>
+                        <button class="project-preview-btn" data-project="bn">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 9 ( poster design ) -->
+                <div class="project-item graphics">
+                    <img src="./graphics/ps1.jpeg" alt="Poster Designs">
+                    <div class="project-overlay">
+                        <h3>Poster Designs</h3>
+                        <p>Illustrator - Canva</p>
+                        <button class="project-preview-btn" data-project="ps">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!--================================================ aiiiii......  -->
+                <!-- ai project 1 ( ai post design ) -->
+                <div class="project-item ai">
+                    <img src="./ai/pt.png" alt="AI Post Designs">
+                    <div class="project-overlay">
+                        <h3>AI Post Designs</h3>
+                        <p>AI Tools</p>
+                        <button class="project-preview-btn" data-project="aipt">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ai project 2 ( ai banner images ) -->
+                <div class="project-item ai">
+                    <img src="./ai3/bn.png" alt="AI Banner Designs">
+                    <div class="project-overlay">
+                        <h3>AI Banner Designs</h3>
+                        <p>AI Tools</p>
+                        <button class="project-preview-btn" data-project="aibn">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ai project 3 ( ai event/sale post design ) -->
+                <div class="project-item ai">
+                    <img src="./ai3/sa.png" alt="AI Event/Sales Post Designs">
+                    <div class="project-overlay">
+                        <h3>AI Event/Sales Post Designs</h3>
+                        <p>AI Tools</p>
+                        <button class="project-preview-btn" data-project="aisa">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ai project 4 ( ai videos ) -->
+                <div class="project-item ai">
+                    <img src="./ai3/v.png" alt="AI Videos">
+                    <div class="project-overlay">
+                        <h3>AI Videos</h3>
+                        <p>AI Tools</p>
+                        <button class="project-preview-btn" data-project="aiv">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ai project 5 ( ai images ) -->
+                <div class="project-item ai">
+                    <img src="./ai3/reimg.png" alt="AI Images">
+                    <div class="project-overlay">
+                        <h3>AI Images</h3>
+                        <p>AI Tools</p>
+                        <button class="project-preview-btn" data-project="aiimg">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!--================================================ packagingggg......  -->
+                <!-- packaging project 1 ( eyepop design ) -->
+                <div class="project-item packaging">
+                    <img src="./packaging/eye.jpeg" alt="EyePop Design">
+                    <div class="project-overlay">
+                        <h3>EyePop Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="eye">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 2 ( lezoo design ) -->
+                <div class="project-item packaging">
+                    <img src="./packaging/lez1.jpeg" alt="Lezoo Design">
+                    <div class="project-overlay">
+                        <h3>Lezoo Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="lez">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 3 ( masaly & dry-fruit design ) -->
+                <div class="project-item packaging">
+                    <img src="./packaging/mas1.jpeg" alt="Masaly & Dry-Fruit Design">
+                    <div class="project-overlay">
+                        <h3>Masaly & Dry-Fruit Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="mes">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 4 ( milky design ) -->
+                <div class="project-item packaging">
+                    <img src="./packaging/milk.jpeg" alt="Milky Design">
+                    <div class="project-overlay">
+                        <h3>Milky Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="milk">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 5 ( strawby yogurt design ) -->
+                <div class="project-item packaging">
+                    <img src="./packaging/sta1.jpeg" alt="Stawby Yogurt Design">
+                    <div class="project-overlay">
+                        <h3>Stawby Yogurt Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="sta">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 6 ( sting lollipop design ) -->
+                <div class="project-item packaging">
+                    <img src="./packaging/stg3.jpeg" alt="Sting Flavour Design">
+                    <div class="project-overlay">
+                        <h3>Sting Flavour Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="stg">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 7 ( zoome design ) -->
+                <div class="project-item packaging">
+                    <img src="./packaging/zoo1.jpeg" alt="Zoome Design">
+                    <div class="project-overlay">
+                        <h3>Zoome Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="zoo">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 8 ( zoome 2 design ) -->
+                <div class="project-item packaging">
+                    <img src="./packaging/zoxl1.jpeg" alt="Zoome Design 2">
+                    <div class="project-overlay">
+                        <h3>Zoome Design 2</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="zoxl">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!--================================================ excellll......  -->
+                <!-- excel project 1 ( pricing engine system ) -->
+                <div class="project-item excel">
+                    <img src="./excel and dashboards/p6.jpeg" alt="Pricing Engine System Setup">
+                    <div class="project-overlay">
+                        <h3>Pricing Engine System Setup</h3>
+                        <p>Excecl - Word</p>
+                        <button class="project-preview-btn" data-project="pes">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- excel project 2 ( manual to automatic ) -->
+                <div class="project-item excel">
+                    <img src="./excel and dashboards/a3.jpeg" alt="Manual to Automation Sheet Conversion">
+                    <div class="project-overlay">
+                        <h3>Manual to Automated Conversion</h3>
+                        <p>Excecl - Google Sheet</p>
+                        <button class="project-preview-btn" data-project="aut">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- excel project 3 ( looker studio template design ) -->
+                <div class="project-item excel">
+                    <img src="./excel and dashboards/l1.jpeg" alt="Search Console & Indexation Report">
+                    <div class="project-overlay">
+                        <h3>Search Console & Indexation Report</h3>
+                        <p>Looker Studio</p>
+                        <button class="project-preview-btn" data-project="lok">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- excel project 4 ( sales planner sheet ) -->
+                <div class="project-item excel">
+                    <img src="./excel and dashboards/d1.jpeg" alt="Sales Planner Sheet">
+                    <div class="project-overlay">
+                        <h3>Sales Planner Sheet</h3>
+                        <p>Excel</p>
+                        <button class="project-preview-btn" data-project="sp">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===== CTA Buttons ===== -->
+        <div style="display:flex;justify-content:center;gap:20px;margin-top:30px;">
+
+            <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Get a Free Quotation">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+            </a>
+
+            <a href="./portfolio.html" class="resume-btn">
+                View All Projects
+            </a>
+
+            <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn"
+                data-tip="Have a project in mind? Let’s discuss!">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =================================================
+  PROJECT MODAL (JS injects preview content here)
+================================================== -->
+
+    <div class="project-modal" id="projectModal">
+        <span class="project-modal-close">&times;</span>
+
+        <div class="project-modal-body">
+            <div class="project-modal-content">
+                <!-- JS injects:
+                 .preview-wrapper
+                 .preview-main
+                 .preview-thumbs -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= TESTIMONIAL SECTION ================= -->
+    <section class="testimonials" id="testimonial">
+
+        <div class="mn-text">
+            <span style="font-size: 1.5rem;">
+                Trusted by Clie<span style="color:black;">nts Worldwide</span>
+            </span>
+            <h2 class="title heading">Testim<span>onials</span></h2>
+        </div>
+
+        <div class="testimonials-box">
+
+            <div class="swiper testimonial-swiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="./Testimonials/gfb.png" alt="Awais Ahmad">
+                            <h2>GO FAST BITS PTY LTD, Australia</h2>
+                            <p>“He built advanced Excel and Google Sheets systems that streamlined our pricing and
+                                reporting processes. Highly reliable, detail-oriented, and technically strong.”</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="./Testimonials/str.png" alt="Salman Tahir">
+                            <h2>StyleRunner</h2>
+                            <p>“He created well-structured Excel sales planner sheets that made daily sales tracking
+                                simple, accurate, and efficient.”</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="./Testimonials/prince.jpeg" alt="M. Taha">
+                            <h2>PrinceFancy.com</h2>
+                            <p>“He implemented backend improvements in our Shopify store that enhanced performance and
+                                made store management much more efficient.”</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="./Testimonials/denf.png" alt="M. Taha">
+                            <h2>DenOfTech.co.uk</h2>
+                            <p>“He resolved multiple technical issues and significantly improved our website’s
+                                performance and structure. The site now looks more polished and works much better.”</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="./Testimonials/rexp.png" alt="M. Taha">
+                            <h2>RepairXpressLahore</h2>
+                            <p>“He handled our complete online business setup professionally, from website to overall
+                                digital presence. Everything was delivered smoothly and on schedule.”</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="./Testimonials/beij.jpeg" alt="M. Taha">
+                            <h2>Beijing Shine</h2>
+                            <p>“He developed our solar project website with a strong focus on clarity and performance.
+                                The final site is well-structured, fast, and easy for visitors to understand.”</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="./Testimonials/iwc.png" alt="M. Taha">
+                            <h2>InteriorWorksCompany.com</h2>
+                            <p>“He delivered a complete website with excellent quality and attention to detail.
+                                Communication was clear throughout the project and the results exceeded our
+                                expectations.”</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="./Testimonials/guzl.png" alt="M. Taha">
+                            <h2>GuzelFits.com</h2>
+                            <p>“He built our website from start to finish with a modern design and smooth functionality.
+                                The site is user-friendly, professional, and performs very well.”</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </section>
+
+
+
+    <!----------------------------------------- contact section design  -->
+    <section class="contact" id="contact">
+        <div class="mn-text">
+            <span style="font-size: 1.5rem;">Let's Work <span style="color: black;">Together</span></span>
+            <h2 class="title heading">Conta<span>ct Now</span></h2>
+        </div>
+
+        <form id="contact-form">
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <input type="text" name="address/country" placeholder="Country" required>
+                    <input type="text" name="service" id="service" list="service-options" placeholder="Select a service"
+                        required>
+
+                    <datalist id="service-options">
+                        <option value="Web Development">
+                        <option value="UI/UX Design">
+                        <option value="SEO">
+                        <option value="Other">
+                    </datalist>
+
+
+
+                </div>
+            </div>
+
+            <div class="input-group-2">
+                <div class="input-box">
+                    <input type="text" name="subject" placeholder="Subject" required>
+                </div>
+                <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <input type="submit" name="submit" value="Submit" class="form-btn">
+            </div>
+        </form>
+
+    </section>
+
+    <!-- --------------------------------------- footer design  -->
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+            <a href="#"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
+        <ul class="list">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#project">Portfolio</a></li>
+            <li><a href="#testimonial">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="copyright">
+            &copy <a href="#home" style="color: white;">Muhammad Talha</a> | All Rights Reserved
+        </p>
+    </footer>
+
+    <!-- ================= FLOATING CONTACT BUTTONS (RIGHT) ================= -->
+    <div class="contact-floating">
+
+        <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn" data-tip="Chat on WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+
+        <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Send an Email">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+        </a>
+
+        <a href="tel:+923255193936" class="contact-btn call-btn" data-tip="Call Me">
+            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Call">
+        </a>
+
+    </div>
+
+    <!-- ================= FLOATING VIDEO BUTTON (LEFT) ================= -->
+    <a onclick="openVideoModal()" class="video-float-btn" data-tip="Watch Intro Video">
+        <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Video">
+    </a>
+
+    <!-- ================= VIDEO MODAL ================= -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-close" onclick="closeVideoModal()">&times;</span>
+            <video controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+
+
+    <script>
+        function openVideoModal() {
+            document.getElementById("videoModal").style.display = "flex";
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById("videoModal");
+            const video = modal.querySelector("video");
+            modal.style.display = "none";
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        function openEmail() {
+            const email = "talha.digital.co@gmail.com";
+            const subject = "Contact from Portfolio";
+            const body = "Hello Talha,%0A%0AI would like to contact you regarding your services.%0A%0AThanks!";
+
+            window.open(
+                `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`,
+                "_blank"
+            );
+        }
+
+        function openWhatsApp() {
+            const phone = "923255193936";
+            const message = "Hello Talha,%0A%0AI would like to contact you regarding your services.%0A%0AThanks!";
+
+            window.open(
+                `https://wa.me/${phone}?text=${message}`,
+                "_blank"
+            );
+        }
+    </script>
+
+
+    <!--============================ Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6936b49ff12e97197d5eb8cd/1jbur34aq';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <!-- ================= BACK TO TOP BUTTON ================= -->
+    <button id="backToTopBtn" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <style>
+        /* Back to top button */
+        #backToTopBtn {
+            position: fixed;
+            left: 20px;
+            bottom: 30px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--my-main-color);
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        #backToTopBtn:hover {
+            transform: translateY(-4px);
+            background-color: #9333ea;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            #backToTopBtn {
+                left: 15px;
+                bottom: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const backToTopBtn = document.getElementById("backToTopBtn");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.display = "block";
+                } else {
+                    backToTopBtn.style.display = "none";
+                }
+            });
+
+            backToTopBtn.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+    <!-- ===================================================== -->
+
+
+
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- typed js  -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- custom js   -->
+    <script src="./index.js"></script>
+
+    <!-- for email button/ -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <!-- for testimonials  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+
+</body>
+
+</html>

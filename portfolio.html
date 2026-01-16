@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!-- CSS style link  -->
+    <link rel="stylesheet" href="./index.css">
+    <!-- fontawesome icons link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Boxicons link  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- for testimonials -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <a href="./index.html" class="logo" style="color: black;">Muhammad <span>Talha</span></a>
+
+        <nav class="myNav">
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./skills.html">Skills</a>
+            <a href="./services.html">Services</a>
+            <a href="./portfolio.html">Portfolio</a>
+            <!-- <a href="#testimonial">Testimonials</a> -->
+            <a href="./contact.html">Contact</a>
+        </nav>
+
+        <a class="header-btn" href="./contact.html">
+            <!-- <i class="fas fa-envelope"></i>  Get a Quote -->
+            Get a Quote
+        </a>
+
+        <i class="fas fa-bars" id="menu-icon"></i>
+
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* ===============================
+               MOBILE MENU TOGGLE
+            ================================ */
+            const menuIcon = document.querySelector("#menu-icon");
+            const myNav = document.querySelector(".myNav");
+
+            if (menuIcon && myNav) {
+                menuIcon.addEventListener("click", () => {
+                    menuIcon.classList.toggle("fa-times");
+                    menuIcon.classList.toggle("rotate");
+                    myNav.classList.toggle("open");
+                });
+            }
+
+            /* ===============================
+               CLOSE MENU ON LINK CLICK (MOBILE)
+            ================================ */
+            document.querySelectorAll(".myNav a").forEach(link => {
+                link.addEventListener("click", () => {
+                    menuIcon.classList.remove("fa-times", "rotate");
+                    myNav.classList.remove("open");
+                });
+            });
+
+            /* ===============================
+               ACTIVE LINK BASED ON PAGE URL
+            ================================ */
+            const navLinks = document.querySelectorAll("header nav a");
+            const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute("href").split("/").pop();
+
+                if (linkPage === currentPage) {
+                    navLinks.forEach(l => l.classList.remove("active"));
+                    link.classList.add("active");
+                }
+            });
+
+            /* ===============================
+               RESET MENU ON SCROLL
+            ================================ */
+            window.addEventListener("scroll", () => {
+                menuIcon.classList.remove("fa-times", "rotate");
+                myNav.classList.remove("open");
+            });
+
+        });
+    </script>
+
+
+    <!-------------------------------------------------
+  PORTFOLIO / PROJECT SECTION
+-------------------------------------------------->
+
+    <section id="project">
+
+        <p style="padding-top: 20px; padding-bottom: 30px; color: #7c3aed; font-size: 12px;"><i
+                class="fa fa-arrow-left"></i>
+            <a href="./index.html">Back to Home</a>
+        </p>
+
+        <!-- Section Heading -->
+        <div class="mn-text">
+            <span style="font-size: 1.5rem;">
+                What I hav<span style="color: black;">e Done Yet</span>
+            </span>
+            <h2 class="title heading">Port<span>folio</span></h2>
+        </div>
+
+        <div class="project-container">
+
+            <!-- ===== Filters ===== -->
+            <ul class="project-filters">
+                <li class="active" data-filter="all">All</li>
+                <li data-filter="websites">Websites</li>
+                <li data-filter="graphics">Graphics</li>
+                <li data-filter="ai">AI</li>
+                <!-- <li data-filter="ecommerce">E-Commerce</li> -->
+                <li data-filter="packaging">Packaging Design</li>
+                <!-- <li data-filter="pattern">Pattern Design</li> -->
+                <li data-filter="excel">Excel & Dashboards</li>
+            </ul>
+
+            <!-- ===== Project Grid ===== -->
+            <div class="project-grid">
+
+                <!--================================================ websitessss......  -->
+                <!-- Website project 1 ( IWC ) -->
+                <div class="project-item websites">
+                    <img src="./Projects/iwc.jpeg" alt="IWC Website">
+                    <div class="project-overlay">
+                        <h3>IWC Site Setup</h3>
+                        <p>WordPress Website</p>
+                        <button class="project-preview-btn" data-type="link"
+                            data-src="https://interiorworkscompany.com/">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 2 ( AC Studio ) -->
+                <div class="project-item websites">
+                    <img src="./Projects/ac2.jpeg" alt="Australian Cinematography Studio">
+                    <div class="project-overlay">
+                        <h3>Australian Cinematography Studio</h3>
+                        <p>Landing Page</p>
+                        <button class="project-preview-btn" data-project="ac">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 3 ( AC Studio ) -->
+                <div class="project-item websites">
+                    <img src="./Projects/fu.jpeg" alt="Fujiappliances">
+                    <div class="project-overlay">
+                        <h3>Fujiappliances.com</h3>
+                        <p>Wordpress Website</p>
+                        <button class="project-preview-btn" data-project="fu">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 4 ( prince fancy ) -->
+                <div class="project-item websites">
+                    <img src="./Projects/prfa4.jpeg" alt="Store Backend Integration">
+                    <div class="project-overlay">
+                        <h3>Store Backend Integration</h3>
+                        <p>Shopify Store</p>
+                        <button class="project-preview-btn" data-project="prfa">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 5 ( wcag 2.1 aa testing ) -->
+                <div class="project-item websites">
+                    <img src="./Projects/wcag1.jpeg" alt="WCAG 2.1 AA Testing">
+                    <div class="project-overlay">
+                        <h3>WCAG 2.1 AA Testing</h3>
+                        <p>Website Performance Testing</p>
+                        <button class="project-preview-btn" data-project="wcag">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 6 ( newoffice website ) -->
+                <div class="project-item websites">
+                    <img src="./Projects/nof1.jpeg" alt="NewOffice Website">
+                    <div class="project-overlay">
+                        <h3>NewOffice Website</h3>
+                        <p>Wordpress</p>
+                        <button class="project-preview-btn" data-project="nof">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 7 ( HR realestate website ) -->
+                <div class="project-item websites">
+                    <img src="./Projects/hr2.jpeg" alt="HR realestate website">
+                    <div class="project-overlay">
+                        <h3>HR RealEstate Website</h3>
+                        <p>Wordpress</p>
+                        <button class="project-preview-btn" data-project="hr">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 8 ( Isplash website ) -->
+                <div class="project-item websites">
+                    <img src="./Projects/isp1.jpeg" alt="Isplash Car Detailing">
+                    <div class="project-overlay">
+                        <h3>Isplash Car Detailing Site</h3>
+                        <p>Wordpress</p>
+                        <button class="project-preview-btn" data-project="isp">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 9 ( sahir properties website ) -->
+                <div class="project-item websites">
+                    <img src="./Projects/shr1.jpeg" alt="Sahir Properties">
+                    <div class="project-overlay">
+                        <h3>Sahir Properties - RealEstate Site</h3>
+                        <p>Wordpress</p>
+                        <button class="project-preview-btn" data-project="shr">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website project 10 ( diamond realestate website ) -->
+                <div class="project-item websites">
+                    <img src="./Projects/dia1.jpeg" alt="Diamond realestate website">
+                    <div class="project-overlay">
+                        <h3>Diamond RealEstate Website</h3>
+                        <p>Wordpress</p>
+                        <button class="project-preview-btn" data-project="dia">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!--================================================ graphicsss......  -->
+                <!-- Graphics project 1 ( ez logos ) -->
+                <div class="project-item graphics">
+                    <img src="./Projects/graphics/lg2.webp" alt="EZ Combination">
+                    <div class="project-overlay">
+                        <h3>EZ Combination</h3>
+                        <p>Logos - Illustrator</p>
+                        <button class="project-preview-btn" data-project="ezlg">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 2 ( Tech logos ) -->
+                <div class="project-item graphics">
+                    <img src="./Projects/graphics/lg1.jpeg" alt="Tech Related Logos">
+                    <div class="project-overlay">
+                        <h3>Tech Related Logos</h3>
+                        <p>Illustrator</p>
+                        <button class="project-preview-btn" data-project="telg">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 3 ( brand logos ) -->
+                <div class="project-item graphics">
+                    <img src="./Projects/graphics/lg6.png" alt="Brand Logos">
+                    <div class="project-overlay">
+                        <h3>Brand Logos</h3>
+                        <p>Illustrator</p>
+                        <button class="project-preview-btn" data-project="bnlg">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 4 ( cover photos ) -->
+                <div class="project-item graphics">
+                    <img src="./Projects/graphics/cp2.png" alt="Cover Photos">
+                    <div class="project-overlay">
+                        <h3>Cover Photos</h3>
+                        <p>Illustrator - Canva</p>
+                        <button class="project-preview-btn" data-project="cp">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 5 ( buisness cards ) -->
+                <div class="project-item graphics">
+                    <img src="./Projects/graphics/bc2.png" alt="Buisness Cards">
+                    <div class="project-overlay">
+                        <h3>Buisness Cards</h3>
+                        <p>Illustrator - Canva</p>
+                        <button class="project-preview-btn" data-project="bc">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 6 ( mockups ) -->
+                <div class="project-item graphics">
+                    <img src="./Projects/graphics/mk2.png" alt="Mockups Design">
+                    <div class="project-overlay">
+                        <h3>Mockups Design</h3>
+                        <p>Illustrator - Canva</p>
+                        <button class="project-preview-btn" data-project="mk">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 7 ( image optimization ) -->
+                <div class="project-item graphics">
+                    <img src="./Projects/graphics/en2.jpg" alt="Images Enhancement">
+                    <div class="project-overlay">
+                        <h3>Images Enhancement</h3>
+                        <p>Photoshop</p>
+                        <button class="project-preview-btn" data-project="en">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 8 ( banner design ) -->
+                <div class="project-item graphics">
+                    <img src="./Projects/graphics/bn1.jpg" alt="Banner Designs">
+                    <div class="project-overlay">
+                        <h3>Banner Designs</h3>
+                        <p>Illustrator - Canva</p>
+                        <button class="project-preview-btn" data-project="bn">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphics project 9 ( poster design ) -->
+                <div class="project-item graphics">
+                    <img src="./Projects/graphics/ps1.jpeg" alt="Poster Designs">
+                    <div class="project-overlay">
+                        <h3>Poster Designs</h3>
+                        <p>Illustrator - Canva</p>
+                        <button class="project-preview-btn" data-project="ps">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!--================================================ aiiiii......  -->
+                <!-- ai project 1 ( ai post design ) -->
+                <div class="project-item ai">
+                    <img src="./Projects/ai/pt.png" alt="AI Post Designs">
+                    <div class="project-overlay">
+                        <h3>AI Post Designs</h3>
+                        <p>AI Tools</p>
+                        <button class="project-preview-btn" data-project="aipt">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ai project 2 ( ai banner images ) -->
+                <div class="project-item ai">
+                    <img src="./Projects/ai/bn.png" alt="AI Banner Designs">
+                    <div class="project-overlay">
+                        <h3>AI Banner Designs</h3>
+                        <p>AI Tools</p>
+                        <button class="project-preview-btn" data-project="aibn">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ai project 3 ( ai event/sale post design ) -->
+                <div class="project-item ai">
+                    <img src="./Projects/ai/sa.png" alt="AI Event/Sales Post Designs">
+                    <div class="project-overlay">
+                        <h3>AI Event/Sales Post Designs</h3>
+                        <p>AI Tools</p>
+                        <button class="project-preview-btn" data-project="aisa">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ai project 4 ( ai videos ) -->
+                <div class="project-item ai">
+                    <img src="./Projects/ai/v.png" alt="AI Videos">
+                    <div class="project-overlay">
+                        <h3>AI Videos</h3>
+                        <p>AI Tools</p>
+                        <button class="project-preview-btn" data-project="aiv">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ai project 5 ( ai images ) -->
+                <div class="project-item ai">
+                    <img src="./Projects/ai/reimg.png" alt="AI Images">
+                    <div class="project-overlay">
+                        <h3>AI Images</h3>
+                        <p>AI Tools</p>
+                        <button class="project-preview-btn" data-project="aiimg">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!--================================================ packagingggg......  -->
+                <!-- packaging project 1 ( eyepop design ) -->
+                <div class="project-item packaging">
+                    <img src="./Projects/packaging/eye.jpeg" alt="EyePop Design">
+                    <div class="project-overlay">
+                        <h3>EyePop Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="eye">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 2 ( lezoo design ) -->
+                <div class="project-item packaging">
+                    <img src="./Projects/packaging/lez1.jpeg" alt="Lezoo Design">
+                    <div class="project-overlay">
+                        <h3>Lezoo Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="lez">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 3 ( masaly & dry-fruit design ) -->
+                <div class="project-item packaging">
+                    <img src="./Projects/packaging/mas1.jpeg" alt="Masaly & Dry-Fruit Design">
+                    <div class="project-overlay">
+                        <h3>Masaly & Dry-Fruit Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="mes">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 4 ( milky design ) -->
+                <div class="project-item packaging">
+                    <img src="./Projects/packaging/milk.jpeg" alt="Milky Design">
+                    <div class="project-overlay">
+                        <h3>Milky Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="milk">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 5 ( strawby yogurt design ) -->
+                <div class="project-item packaging">
+                    <img src="./Projects/packaging/sta1.jpeg" alt="Stawby Yogurt Design">
+                    <div class="project-overlay">
+                        <h3>Stawby Yogurt Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="sta">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 6 ( sting lollipop design ) -->
+                <div class="project-item packaging">
+                    <img src="./Projects/packaging/stg3.jpeg" alt="Sting Flavour Design">
+                    <div class="project-overlay">
+                        <h3>Sting Flavour Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="stg">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 7 ( zoome design ) -->
+                <div class="project-item packaging">
+                    <img src="./Projects/packaging/zoo1.jpeg" alt="Zoome Design">
+                    <div class="project-overlay">
+                        <h3>Zoome Design</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="zoo">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- packaging project 8 ( zoome 2 design ) -->
+                <div class="project-item packaging">
+                    <img src="./Projects/packaging/zoxl1.jpeg" alt="Zoome Design 2">
+                    <div class="project-overlay">
+                        <h3>Zoome Design 2</h3>
+                        <p>Photoshop - Illustrator</p>
+                        <button class="project-preview-btn" data-project="zoxl">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!--================================================ excellll......  -->
+                <!-- excel project 1 ( pricing engine system ) -->
+                <div class="project-item excel">
+                    <img src="./Projects/excel and dashboards/p6.jpeg" alt="Pricing Engine System Setup">
+                    <div class="project-overlay">
+                        <h3>Pricing Engine System Setup</h3>
+                        <p>Excecl - Word</p>
+                        <button class="project-preview-btn" data-project="pes">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- excel project 2 ( manual to automatic ) -->
+                <div class="project-item excel">
+                    <img src="./Projects/excel and dashboards/a3.jpeg" alt="Manual to Automation Sheet Conversion">
+                    <div class="project-overlay">
+                        <h3>Manual to Automated Conversion</h3>
+                        <p>Excecl - Google Sheet</p>
+                        <button class="project-preview-btn" data-project="aut">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- excel project 3 ( looker studio template design ) -->
+                <div class="project-item excel">
+                    <img src="./Projects/excel and dashboards/l1.jpeg" alt="Search Console & Indexation Report">
+                    <div class="project-overlay">
+                        <h3>Search Console & Indexation Report</h3>
+                        <p>Looker Studio</p>
+                        <button class="project-preview-btn" data-project="lok">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- excel project 4 ( sales planner sheet ) -->
+                <div class="project-item excel">
+                    <img src="./Projects/excel and dashboards/d1.jpeg" alt="Sales Planner Sheet">
+                    <div class="project-overlay">
+                        <h3>Sales Planner Sheet</h3>
+                        <p>Excel</p>
+                        <button class="project-preview-btn" data-project="sp">
+                            Preview
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===== CTA Buttons ===== -->
+        <div style="display:flex;justify-content:center;gap:20px;margin-top:30px;">
+
+            <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Get a Free Quotation">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+            </a>
+
+            <a href="./contact.html" class="resume-btn">
+                Contact Now
+            </a>
+
+            <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn"
+                data-tip="Have a project in mind? Let’s discuss!">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =================================================
+  PROJECT MODAL (JS injects preview content here)
+================================================== -->
+
+    <div class="project-modal" id="projectModal">
+        <span class="project-modal-close">&times;</span>
+
+        <div class="project-modal-body">
+            <div class="project-modal-content">
+                <!-- JS injects:
+                 .preview-wrapper
+                 .preview-main
+                 .preview-thumbs -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ================= PROJECT Section ================= */
+
+        /* ================= PROJECT MODAL SETUP ================= */
+
+        const projectModal = document.getElementById("projectModal");
+        const projectModalContent = projectModal.querySelector(".project-modal-content");
+        const projectModalClose = projectModal.querySelector(".project-modal-close");
+
+        /* ================= MEDIA TYPE DETECTOR ================= */
+
+        function getMediaType(src) {
+            const ext = src.split(".").pop().toLowerCase();
+            return ["mp4", "webm", "ogg"].includes(ext) ? "video" : "image";
+        }
+
+        /* ================= PROJECT MEDIA DATA ================= */
+
+        const projectMedia = {
+            "ac": {
+                media: [
+                    "./Projects/ac.png",
+                    "./Projects/ac1.jpeg",
+                    "./Projects/ac2.jpeg",
+                    "./Projects/ac3.jpeg",
+                    "./Projects/ac4.jpeg",
+                    "./Projects/ac5.jpeg"
+                ]
+            },
+
+            "fu": {
+                media: [
+                    "./Projects/fu.jpeg",
+                    "./Projects/fu1.jpeg",
+                    "./Projects/fu2.jpeg",
+                    "./Projects/fu3.jpeg",
+                    "./Projects/fu4.jpeg",
+                    "./Projects/fu5.jpeg"
+                ]
+            },
+
+            "prfa": {
+                media: [
+                    "./Projects/prfav1.mp4",
+                    "./Projects/prfa3.jpeg",
+                    "./Projects/prfa2.jpeg",
+                    "./Projects/prfa1.jpeg",
+                    "./Projects/prfa4.jpeg"
+                ]
+            },
+
+            "wcag": {
+                media: [
+                    "./Projects/wcag1.jpeg",
+                    "./Projects/wcag2.jpeg"
+                ]
+            },
+
+            "nof": {
+                media: [
+                    "./Projects/nofv1.mp4",
+                    "./Projects/nof1.jpeg",
+                    "./Projects/nof2.jpeg",
+                    "./Projects/nof3.jpeg",
+                    "./Projects/nof4.jpeg",
+                    "./Projects/nof5.jpeg",
+                    "./Projects/nof6.jpeg",
+                    "./Projects/nof7.jpeg"
+                ]
+            },
+
+            "isp": {
+                media: [
+                    "./Projects/ispv1.mp4",
+                    "./Projects/isp1.jpeg",
+                    "./Projects/isp2.jpeg",
+                    "./Projects/isp3.jpeg",
+                    "./Projects/isp4.jpeg",
+                    "./Projects/isp5.jpeg",
+                    "./Projects/isp6.jpeg",
+                    "./Projects/isp7.jpeg"
+                ]
+            },
+
+            "shr": {
+                media: [
+                    "./Projects/shrv1.mp4",
+                    "./Projects/shr1.jpeg",
+                    "./Projects/shr2.jpeg",
+                    "./Projects/shr3.jpeg",
+                    "./Projects/shr4.jpeg",
+                    "./Projects/shr5.jpeg",
+                    "./Projects/shr6.jpeg",
+                    "./Projects/shr7.jpeg",
+                    "./Projects/shr8.jpeg"
+                ]
+            },
+
+            "hr": {
+                media: [
+                    "./Projects/hrv1.mp4",
+                    "./Projects/hr2.jpeg",
+                    "./Projects/hr1.jpeg",
+                    "./Projects/hr3.jpeg",
+                    "./Projects/hr4.jpeg",
+                    "./Projects/hr5.jpeg",
+                    "./Projects/hr6.jpeg",
+                    "./Projects/hr7.jpeg",
+                    "./Projects/hr8.jpeg",
+                    "./Projects/hr9.jpeg",
+                    "./Projects/hr10.jpeg"
+                ]
+            },
+
+            "dia": {
+                media: [
+                    "./Projects/diav1.mp4",
+                    "./Projects/dia1.jpeg",
+                    "./Projects/dia2.jpeg",
+                    "./Projects/dia3.jpeg",
+                    "./Projects/dia4.jpeg",
+                    "./Projects/dia5.jpeg",
+                    "./Projects/dia6.jpeg"
+                ]
+            },
+
+            // <!--================================================ graphicsss......  -->
+
+            "ezlg": {
+                media: [
+                    "./Projects/graphics/lg3.jpg",
+                    "./Projects/graphics/lg4.jpg",
+                    "./Projects/graphics/lg5.webp"
+                ]
+            },
+
+            "telg": {
+                media: [
+                    "./Projects/graphics/lg1.jpeg",
+                    "./Projects/graphics/lg8.png"
+                ]
+            },
+
+            "bnlg": {
+                media: [
+                    "./Projects/graphics/lg6.png",
+                    "./Projects/graphics/lg7.jpeg"
+                ]
+            },
+
+            "cp": {
+                media: [
+                    "./Projects/graphics/cp2.png",
+                    "./Projects/graphics/cp1.png"
+                ]
+            },
+
+            "bc": {
+                media: [
+                    "./Projects/graphics/bc2.png",
+                    "./Projects/graphics/bc1.jpeg"
+                ]
+            },
+
+            "mk": {
+                media: [
+                    "./Projects/graphics/mk2.png",
+                    "./Projects/graphics/mk1.png"
+                ]
+            },
+
+            "en": {
+                media: [
+                    "./Projects/graphics/en1.jpg",
+                    "./Projects/graphics/en2.jpg"
+                ]
+            },
+
+            "bn": {
+                media: [
+                    "./Projects/graphics/bn1.jpg"
+                ]
+            },
+
+            "ps": {
+                media: [
+                    "./Projects/graphics/ps1.jpeg",
+                    "./Projects/graphics/ps2.png"
+                ]
+            },
+
+            // <!--================================================ aiiiii......  -->
+
+            "aipt": {
+                media: [
+                    "./Projects/ai/pt.png",
+                    "./Projects/ai/pt12.png",
+                    "./Projects/ai/pt13.png",
+                    "./Projects/ai/pt8.png",
+                    "./Projects/ai/pt9.png",
+                    "./Projects/ai/pt14.png",
+                    "./Projects/ai/pt15.png",
+                    "./Projects/ai/pt16.png",
+                    "./Projects/ai/pt17.png",
+                    "./Projects/ai/pt18.png",
+                    "./Projects/ai/pt5.png",
+                    "./Projects/ai/pt3.png",
+                    "./Projects/ai/pt19.png",
+                    "./Projects/ai/pt1.png",
+                    "./Projects/ai/pt2.png",
+                    "./Projects/ai/pt4.png",
+                    "./Projects/ai/pt6.png",
+                    "./Projects/ai/pt7.png",
+                    "./Projects/ai/pt9.png",
+                    "./Projects/ai/pt10.png",
+                    "./Projects/ai/pt11.png",
+                    "./Projects/ai/pt20.png"
+                ]
+            },
+
+            "aisa": {
+                media: [
+                    "./Projects/ai/sa.png",
+                    "./Projects/ai/qd2.png",
+                    "./Projects/ai/qd7.png",
+                    "./Projects/ai/qd9.png",
+                    "./Projects/ai/qd13.png",
+                    "./Projects/ai/qd11.png",
+                    "./Projects/ai/qd14.png",
+                    "./Projects/ai/qd8.png",
+                    "./Projects/ai/qd10.png",
+                    "./Projects/ai/qd5.png",
+                    "./Projects/ai/qd6.png",
+                    "./Projects/ai/qd1.png",
+                    "./Projects/ai/qd3.png",
+                    "./Projects/ai/qd4.png",
+                    "./Projects/ai/qd12.png"
+                ]
+            },
+
+            "aiimg": {
+                media: [
+                    "./Projects/ai/reimg.png",
+                    "./Projects/ai/reimg5.jpeg",
+                    "./Projects/ai/reimg6.png",
+                    "./Projects/ai/reimg1.png",
+                    "./Projects/ai/reimg2.png",
+                    "./Projects/ai/reimg3.png",
+                    "./Projects/ai/reimg4.png"
+                ]
+            },
+
+            "aibn": {
+                media: [
+                    "./Projects/ai/bn.png",
+                    "./Projects/ai/bn2.webp",
+                    "./Projects/ai/bn3.jpeg",
+                    "./Projects/ai/bn1.webp"
+                ]
+            },
+
+            "aiv": {
+                media: [
+                    "./Projects/ai/v8.mp4",
+                    "./Projects/ai/v1.mp4",
+                    "./Projects/ai/v2.mp4",
+                    "./Projects/ai/v3.mp4",
+                    "./Projects/ai/v4.mp4",
+                    "./Projects/ai/v5.mp4",
+                    "./Projects/ai/v6.mp4",
+                    "./Projects/ai/v7.mp4"
+                ]
+            },
+
+            // <!--================================================ packagingggg......  -->
+
+            "eye": {
+                media: [
+                    "./Projects/packaging/eye.jpeg"
+                ]
+            },
+
+            "lez": {
+                media: [
+                    "./Projects/packaging/lez1.jpeg",
+                    "./Projects/packaging/lez2.jpeg"
+                ]
+            },
+
+            "mes": {
+                media: [
+                    "./Projects/packaging/mas1.jpeg",
+                    "./Projects/packaging/mas2.jpeg",
+                    "./Projects/packaging/mas3.jpeg",
+                    "./Projects/packaging/mas4.jpeg"
+                ]
+            },
+
+            "milk": {
+                media: [
+                    "./Projects/packaging/milk.jpeg"
+                ]
+            },
+
+            "sta": {
+                media: [
+                    "./Projects/packaging/sta1.jpeg",
+                    "./Projects/packaging/sta2.jpeg"
+                ]
+            },
+
+            "stg": {
+                media: [
+                    "./Projects/packaging/stg3.jpeg",
+                    "./Projects/packaging/stg2.jpeg",
+                    "./Projects/packaging/stg4.jpeg",
+                    "./Projects/packaging/stg5.jpeg",
+                    "./Projects/packaging/stg1.jpeg"
+                ]
+            },
+
+            "zoo": {
+                media: [
+                    "./Projects/packaging/zoo1.jpeg",
+                    "./Projects/packaging/zoo2.jpeg",
+                    "./Projects/packaging/zoo3.jpeg",
+                    "./Projects/packaging/zoo4.jpeg"
+                ]
+            },
+
+            "zoxl": {
+                media: [
+                    "./Projects/packaging/zoxl1.jpeg",
+                    "./Projects/packaging/zoxl2.jpeg",
+                    "./Projects/packaging/zoxl3.jpeg",
+                    "./Projects/packaging/zoxl4.jpeg"
+                ]
+            },
+
+            // <!--================================================ excellll......  -->
+
+            "pes": {
+                media: [
+                    "./Projects/excel and dashboards/v1.mp4",
+                    "./Projects/excel and dashboards/v2.mp4",
+                    "./Projects/excel and dashboards/v3.mp4",
+                    "./Projects/excel and dashboards/p1.jpeg",
+                    "./Projects/excel and dashboards/p2.jpeg",
+                    "./Projects/excel and dashboards/p3.jpeg",
+                    "./Projects/excel and dashboards/p4.jpeg",
+                    "./Projects/excel and dashboards/p5.jpeg",
+                    "./Projects/excel and dashboards/p6.jpeg",
+                    "./Projects/excel and dashboards/p7.jpeg",
+                    "./Projects/excel and dashboards/p8.jpeg",
+                    "./Projects/excel and dashboards/p9.jpeg"
+                ]
+            },
+
+            "aut": {
+                media: [
+                    "./Projects/excel and dashboards/av1.mp4",
+                    "./Projects/excel and dashboards/a6.jpg",
+                    "./Projects/excel and dashboards/a3.jpeg",
+                    "./Projects/excel and dashboards/a4.jpeg",
+                    "./Projects/excel and dashboards/a5.jpeg",
+                    "./Projects/excel and dashboards/a1.jpeg",
+                    "./Projects/excel and dashboards/a2.jpeg"
+                ]
+            },
+
+            "lok": {
+                media: [
+                    "./Projects/excel and dashboards/l1.jpeg",
+                    "./Projects/excel and dashboards/l2.jpeg"
+                ]
+            },
+
+            "sp": {
+                media: [
+                    "./Projects/excel and dashboards/d1.jpeg",
+                    "./Projects/excel and dashboards/d2.jpeg",
+                    "./Projects/excel and dashboards/d3.jpeg",
+                    "./Projects/excel and dashboards/d4.jpeg"
+                ]
+            },
+
+        };
+
+        /* ================= PREVIEW BUTTON CLICK ================= */
+
+        document.querySelectorAll(".project-preview-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+
+                /* External website preview */
+                if (btn.dataset.type === "link") {
+                    window.open(btn.dataset.src, "_blank", "noopener,noreferrer");
+                    return;
+                }
+
+                const projectKey = btn.dataset.project;
+                const project = projectMedia[projectKey];
+                if (!project) return;
+
+                projectModalContent.innerHTML = `
+      <div class="preview-wrapper">
+        <div class="preview-main"></div>
+        <div class="preview-thumbs"></div>
+      </div>
+    `;
+
+                const main = projectModalContent.querySelector(".preview-main");
+                const thumbs = projectModalContent.querySelector(".preview-thumbs");
+
+                project.media.forEach((src, index) => {
+                    const thumbWrap = document.createElement("div");
+                    thumbWrap.className = "preview-thumb" + (index === 0 ? " active" : "");
+
+                    const mediaType = getMediaType(src);
+                    let thumbMedia;
+
+                    if (mediaType === "image") {
+                        thumbMedia = document.createElement("img");
+                        thumbMedia.src = src;
+                        thumbMedia.loading = "lazy";
+                    } else {
+                        thumbMedia = document.createElement("video");
+                        thumbMedia.src = src;
+                        thumbMedia.muted = true;
+                        thumbMedia.playsInline = true;
+                        thumbMedia.preload = "metadata";
+                        thumbWrap.classList.add("video");
+                    }
+
+                    thumbWrap.appendChild(thumbMedia);
+
+                    thumbWrap.onclick = () => {
+                        document
+                            .querySelectorAll(".preview-thumb")
+                            .forEach(t => t.classList.remove("active"));
+
+                        thumbWrap.classList.add("active");
+                        loadMainMedia(mediaType, src, main);
+                    };
+
+                    thumbs.appendChild(thumbWrap);
+
+                    /* Load first media by default */
+                    if (index === 0) {
+                        loadMainMedia(mediaType, src, main);
+                    }
+                });
+
+                projectModal.classList.add("active");
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        /* ================= LOAD MAIN MEDIA ================= */
+
+        function loadMainMedia(type, src, container) {
+            container.innerHTML = "";
+
+            /* Stop any previous video */
+            const oldVideo = container.querySelector("video");
+            if (oldVideo) {
+                oldVideo.pause();
+                oldVideo.currentTime = 0;
+            }
+
+            let media;
+
+            if (type === "image") {
+                media = document.createElement("img");
+                media.src = src;
+                media.loading = "lazy";
+
+                media.onload = () => {
+                    const isVertical = media.naturalHeight > media.naturalWidth;
+
+                    if (isVertical) {
+                        media.style.height = "100%";
+                        media.style.width = "auto";
+                        container.style.overflow = "hidden";
+                        container.style.alignItems = "center";
+                    } else {
+                        media.style.width = "100%";
+                        media.style.height = "auto";
+                        container.style.overflow = "auto";
+                    }
+                };
+            } else {
+                media = document.createElement("video");
+                media.src = src;
+                media.controls = true;
+                media.autoplay = true;
+                media.playsInline = true;
+
+                media.onloadedmetadata = () => {
+                    const isVertical = media.videoHeight > media.videoWidth;
+
+                    if (isVertical) {
+                        media.style.height = "100%";
+                        media.style.width = "auto";
+                        container.style.overflow = "hidden";
+                        container.style.alignItems = "center";
+                    } else {
+                        media.style.width = "100%";
+                        media.style.height = "auto";
+                        container.style.overflow = "auto";
+                    }
+                };
+            }
+
+            media.style.maxWidth = "100%";
+            media.style.display = "block";
+            container.appendChild(media);
+        }
+
+        /* ================= CLOSE MODAL ================= */
+
+        projectModalClose.onclick = closeModal;
+        projectModal.onclick = e => e.target === projectModal && closeModal();
+
+        function closeModal() {
+            projectModal.classList.remove("active");
+            projectModalContent.innerHTML = "";
+            document.body.style.overflow = "";
+        }
+
+        /* ================= FILTERING ================= */
+
+        const filterButtons = document.querySelectorAll(".project-filters li");
+        const projectItems = document.querySelectorAll(".project-item");
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                filterButtons.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+
+                const filter = btn.dataset.filter;
+
+                projectItems.forEach(item => {
+                    if (filter === "all" || item.classList.contains(filter)) {
+                        item.style.display = "block";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <!-- --------------------------------------- footer design  -->
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+            <a href="#"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
+        <ul class="list">
+            <li><a href="./about.html">About Me</a></li>
+            <li><a href="./skills.html">Skills</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./portfolio.html">Portfolio</a></li>
+            <!-- <li><a href="#testimonial">Testimonials</a></li> -->
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <p class="copyright">
+            &copy <a href="./index.html" style="color: white;">Muhammad Talha</a> | All Rights Reserved
+        </p>
+    </footer>
+
+    <!-- ================= FLOATING CONTACT BUTTONS (RIGHT) ================= -->
+    <div class="contact-floating">
+
+        <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn" data-tip="Chat on WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+
+        <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Send an Email">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+        </a>
+
+        <a href="tel:+923255193936" class="contact-btn call-btn" data-tip="Call Me">
+            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Call">
+        </a>
+
+    </div>
+
+    <!-- ================= FLOATING VIDEO BUTTON (LEFT) ================= -->
+    <a onclick="openVideoModal()" class="video-float-btn" data-tip="Watch Intro Video">
+        <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Video">
+    </a>
+
+    <!-- ================= VIDEO MODAL ================= -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-close" onclick="closeVideoModal()">&times;</span>
+            <video controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+
+
+    <script>
+        function openVideoModal() {
+            document.getElementById("videoModal").style.display = "flex";
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById("videoModal");
+            const video = modal.querySelector("video");
+            modal.style.display = "none";
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        function openEmail() {
+            const email = "talha.digital.co@gmail.com";
+            const subject = "Contact from Portfolio";
+            const body = "Hello Talha,%0A%0AI would like to contact you regarding your services.%0A%0AThanks!";
+
+            window.open(
+                `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`,
+                "_blank"
+            );
+        }
+
+        function openWhatsApp() {
+            const phone = "923255193936";
+            const message = "Hello Talha,%0A%0AI would like to contact you regarding your services.%0A%0AThanks!";
+
+            window.open(
+                `https://wa.me/${phone}?text=${message}`,
+                "_blank"
+            );
+        }
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6936b49ff12e97197d5eb8cd/1jbur34aq';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <!-- ================= BACK TO TOP BUTTON ================= -->
+    <button id="backToTopBtn" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <style>
+        /* Back to top button */
+        #backToTopBtn {
+            position: fixed;
+            left: 20px;
+            bottom: 30px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--my-main-color);
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        #backToTopBtn:hover {
+            transform: translateY(-4px);
+            background-color: #9333ea;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            #backToTopBtn {
+                left: 15px;
+                bottom: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const backToTopBtn = document.getElementById("backToTopBtn");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.display = "block";
+                } else {
+                    backToTopBtn.style.display = "none";
+                }
+            });
+
+            backToTopBtn.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+    <!-- ===================================================== -->
+
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- typed js  -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- custom js   -->
+    <script src="./index.js"></script>
+
+    <!-- for email button/ -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <!-- for testimonials  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+</body>
+
+</html>

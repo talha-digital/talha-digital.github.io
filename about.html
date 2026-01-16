@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+
+    <!-- CSS style link  -->
+    <link rel="stylesheet" href="./index.css">
+    <!-- fontawesome icons link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Boxicons link  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- for testimonials -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <a href="./index.html" class="logo" style="color: black;">Muhammad <span>Talha</span></a>
+
+        <nav class="myNav">
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./skills.html">Skills</a>
+            <a href="./services.html">Services</a>
+            <a href="./portfolio.html">Portfolio</a>
+            <!-- <a href="#testimonial">Testimonials</a> -->
+            <a href="./contact.html">Contact</a>
+        </nav>
+
+        <a class="header-btn" href="./contact.html">
+            <!-- <i class="fas fa-envelope"></i>  Get a Quote -->
+            Get a Quote
+        </a>
+
+        <i class="fas fa-bars" id="menu-icon"></i>
+
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* ===============================
+               MOBILE MENU TOGGLE
+            ================================ */
+            const menuIcon = document.querySelector("#menu-icon");
+            const myNav = document.querySelector(".myNav");
+
+            if (menuIcon && myNav) {
+                menuIcon.addEventListener("click", () => {
+                    menuIcon.classList.toggle("fa-times");
+                    menuIcon.classList.toggle("rotate");
+                    myNav.classList.toggle("open");
+                });
+            }
+
+            /* ===============================
+               CLOSE MENU ON LINK CLICK (MOBILE)
+            ================================ */
+            document.querySelectorAll(".myNav a").forEach(link => {
+                link.addEventListener("click", () => {
+                    menuIcon.classList.remove("fa-times", "rotate");
+                    myNav.classList.remove("open");
+                });
+            });
+
+            /* ===============================
+               ACTIVE LINK BASED ON PAGE URL
+            ================================ */
+            const navLinks = document.querySelectorAll("header nav a");
+            const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute("href").split("/").pop();
+
+                if (linkPage === currentPage) {
+                    navLinks.forEach(l => l.classList.remove("active"));
+                    link.classList.add("active");
+                }
+            });
+
+            /* ===============================
+               RESET MENU ON SCROLL
+            ================================ */
+            window.addEventListener("scroll", () => {
+                menuIcon.classList.remove("fa-times", "rotate");
+                myNav.classList.remove("open");
+            });
+
+        });
+    </script>
+
+
+    <!-- ================= ABOUT SECTION ================= -->
+
+    <section class="about-section" id="about">
+
+        <p style="padding-top: 30px; padding-bottom: 20px; color: #7c3aed; font-size: 12px;"><i
+                class="fa fa-arrow-left"></i>
+            <a href="./index.html">Back to Home</a>
+        </p>
+
+        <div style="text-align: center;">
+            <span style="font-size: 1.5rem; color: black;" class="animate"><span>Why</span> Me!</span>
+        </div>
+
+        <h2 class="about-title heading">About <span>Me</span></h2>
+
+        <div class="about-grid">
+
+            <!-- EXPERIENCE -->
+            <div class="card about-box reveal">
+                <h3>Experience</h3>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div>
+                            <h4>Full-Stack Web Developer</h4>
+                            <h5>2024 – Present | Saleswaly Marketing Agency</h5>
+                            <p>Built and maintained responsive websites across WordPress, Shopify, Squarespace, and
+                                custom HTML/CSS/JavaScript. Optimized site performance, conducted accessibility audits
+                                (WCAG 2.1 AA), and implemented UX improvements to enhance user experience and
+                                conversions. Developed scalable e-commerce solutions, automated pricing logic, and
+                                managed complex product workflows.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div>
+                            <h4>AI Graphic & Visual Designer</h4>
+                            <h5>2024 – 2026 | Saleswaly Marketing Agency</h5>
+                            <p>Created AI-powered visual content for digital campaigns, social media, branding, and
+                                packaging. Designed logos, brochures, flyers, business cards, and marketing creatives
+                                that elevated brand identity and engagement. Leveraged AI tools to produce high-quality
+                                graphics efficiently for client campaigns.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div>
+                            <h4>Branding & Marketing Creative Expert</h4>
+                            <h5>2024 – 2025 | Saleswaly Marketing Agency</h5>
+                            <p>Developed complete brand identities and marketing visuals for clients, including brand
+                                guidelines, social media campaigns, and promotional materials. Delivered cohesive,
+                                visually compelling assets aligned with client goals and target audiences, enhancing
+                                brand recognition and market impact.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div>
+                            <h4>Technical Specialist & Troubleshooter</h4>
+                            <h5>2024 – 2026 | Saleswaly Marketing Agency</h5>
+                            <p>Provided technical solutions and troubleshooting across websites, e-commerce stores, and
+                                automation systems. Diagnosed performance issues, optimized workflows, and ensured
+                                smooth operation of digital assets, enhancing reliability and client satisfaction.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div>
+                            <h4>Automation & Advanced Excel Specialist</h4>
+                            <h5>2024 – 2026 | Saleswaly Marketing Agency</h5>
+                            <p>Designed and implemented automated workflows for pricing, quoting, and document
+                                generation (Excel → Word → PDF). Built advanced Excel and Google Sheets systems for
+                                licensing, reseller management, and regional business logic. Streamlined data
+                                processes to improve efficiency and reduce manual effort.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="right-column">
+
+                <!-- EDUCATION -->
+                <div class="card about-box reveal">
+                    <h3>Education</h3>
+
+                    <div class="edu-cards">
+                        <div class="edu-card">
+                            <h4>Bachelor’s Degree</h4>
+                            <p>Software Engineering</p>
+                            <p>Orbit University Lahore – Nov 2024 – Present </p>
+
+                            <h4>A-Levels</h4>
+                            <p>Pre-Engineering</p>
+                            <p>WWHS College Lahore – Jan 2022 – Sep 2024 </p>
+                        </div>
+
+                        <div class="edu-card">
+                            <h4>Diploma</h4>
+                            <ol>
+                                <li><b>Full-Stack Web Development</b> – Don Bosco Technical & Youth Center</li>
+                                <li><b>Graphic Designing</b> – Digiskills</li>
+                                <li><b>AI Graphics & Visual Creative</b> – Self-Learning / YouTube</li>
+                                <li><b>Advanced Excel & Automation</b> – Self-Learning / YouTube Courses</li>
+                            </ol>
+                        </div>
+
+                        <div class="edu-card">
+                            <h4>Certifications</h4>
+                            <ol>
+                                <li>Full-Stack <b>Web Development</b> Certificate – Don Bosco Technical & Youth Center
+                                </li>
+                                <li><b>Graphic Designer</b> Certificate – Digiskills</li>
+                            </ol>
+                            <div style="display: flex; justify-content: center; margin-top: 30px;">
+                                <!-- Email Button -->
+                                <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Get a Free Quotation">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg"
+                                        alt="Email">
+                                </a>
+                                <!-- WhatsApp Button -->
+                                <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn"
+                                    data-tip="Have a project in mind? Let’s discuss!">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                                        alt="WhatsApp">
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BRANDS -->
+                <div class="card about-box reveal">
+                    <h3>Brands I Work With</h3>
+
+                    <ol class="brands-list">
+                        <li><b>GO FAST BITS PTY LTD, Australia</b> – Advanced Excel / Google Sheets Automation</li>
+                        <li><b>Makhano Studio</b> – Custom Advanced UI/UX Site Creation</li>
+                        <li><b>PrinceFancy.com</b> – Shopify Store Backend Improvements & Changes</li>
+                        <li><b>AyshaKhanBatik.com</b> – Shopify Store Core Issues Fix</li>
+                        <li><b>Fuji Appliances</b> – Website Issues Fix</li>
+                        <li><b>Infinity Studio</b> – Logo Creation & Social Media Handling</li>
+                        <li><b>StyleRunner</b> – Excel Daily Sales Planner Sheets Design</li>
+                        <li><b>LookerStudio</b> – Search Console Report Template Design</li>
+                        <li><b>OspreyLondon.uk</b> – Writing Blogs</li>
+                        <li><b>DenOfTech.co.uk</b> – Website Improvements</li>
+                        <li><b>EraZ Group</b> – Complete Business Management Setup</li>
+                        <li><b>RepairXpressLahore</b> – Complete Business Online Setup</li>
+                        <li><b>Beijing Shine</b> – Complete Solar-Based Project Site Setup</li>
+                        <li><b>InteriorWorksCompany.com</b> – Complete Website Setup / Creation</li>
+                        <li><b>GuzelFits.com</b> – Complete Website Setup / Creation</li>
+                        <li><b>Deco Interior</b> – Complete WordPress Site</li>
+                        <li><b>Luxury Sofa</b> – WordPress Site</li>
+                        <li><b>Levaro</b> – Shopify Store Setup / Creation</li>
+                        <li><b>Isplash Car Detailing</b> – WordPress Site</li>
+                        <li><b>The Luxury Interior</b> – WordPress Site Setup</li>
+                        <li><b>Indigo Realestate</b> – WordPress Site Setup</li>
+                        <li><b>Sahir Properties</b> – WordPress Site Setup</li>
+                    </ol>
+                    <div style="display: flex; justify-content: center; margin-top: 15px;">
+                        <!-- WhatsApp Button -->
+                        <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn"
+                            data-tip="Have a project in mind? Let’s discuss!">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                        </a>
+
+                        <a href="#project" class="resume-btn">Have a Look On My Portfolio</a>
+
+                    </div>
+                </div>
+
+
+                <!-- STATS -->
+                <div class="card about-box reveal stats-section">
+                    <h3>Quick Stats</h3>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4 data-target="50">0</h4>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 data-target="30">0</h4>
+                            <p>Clients</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 data-target="2">0</h4>
+                            <p>Years</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 data-target="100">0</h4>
+                            <p>Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About CTA -->
+                <div class="card about-box reveal">
+                    <div style="display: flex; justify-content: center;">
+                        <!-- Email Button -->
+                        <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Get a Free Quotation">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg"
+                                alt="Email">
+                        </a>
+
+                        <a href="./My Resume.pdf" class="resume-btn" target="_blank">View/Download My Resume</a>
+
+                        <!-- Call Button -->
+                        <a href="tel:+923255193936" class="contact-btn call-btn"
+                            data-tip="Call now! I’m available to assist you anytime">
+                            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Call Icon">
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= JS ================= -->
+    <script>
+        const reveals = document.querySelectorAll(".reveal");
+
+        window.addEventListener("scroll", () => {
+            reveals.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        });
+
+        let animated = false;
+        window.addEventListener("scroll", () => {
+            const stats = document.querySelector(".stats-section");
+            if (!stats || animated) return;
+
+            if (stats.classList.contains("active")) {
+                document.querySelectorAll(".stat-card h4").forEach(counter => {
+                    const target = +counter.dataset.target;
+                    let count = 0;
+
+                    const interval = setInterval(() => {
+                        count++;
+                        counter.innerText = count;
+                        if (count >= target) {
+                            counter.innerText = target + (target === 100 ? "%" : "+");
+                            clearInterval(interval);
+                        }
+                    }, 20);
+                });
+                animated = true;
+            }
+        });
+    </script>
+
+    <!-- --------------------------------------- footer design  -->
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+            <a href="#"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
+        <ul class="list">
+            <li><a href="./about.html">About Me</a></li>
+            <li><a href="./skills.html">Skills</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./portfolio.html">Portfolio</a></li>
+            <!-- <li><a href="#testimonial">Testimonials</a></li> -->
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <p class="copyright">
+            &copy <a href="./index.html" style="color: white;">Muhammad Talha</a> | All Rights Reserved
+        </p>
+    </footer>
+
+    <!-- ================= FLOATING CONTACT BUTTONS (RIGHT) ================= -->
+    <div class="contact-floating">
+
+        <a onclick="openWhatsApp()" class="contact-btn whatsapp-btn" data-tip="Chat on WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+
+        <a onclick="openEmail()" class="contact-btn email-btn" data-tip="Send an Email">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+        </a>
+
+        <a href="tel:+923255193936" class="contact-btn call-btn" data-tip="Call Me">
+            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Call">
+        </a>
+
+    </div>
+
+    <!-- ================= FLOATING VIDEO BUTTON (LEFT) ================= -->
+    <a onclick="openVideoModal()" class="video-float-btn" data-tip="Watch Intro Video">
+        <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Video">
+    </a>
+
+    <!-- ================= VIDEO MODAL ================= -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-close" onclick="closeVideoModal()">&times;</span>
+            <video controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+
+
+    <script>
+        function openVideoModal() {
+            document.getElementById("videoModal").style.display = "flex";
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById("videoModal");
+            const video = modal.querySelector("video");
+            modal.style.display = "none";
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        function openEmail() {
+            const email = "talha.digital.co@gmail.com";
+            const subject = "Contact from Portfolio";
+            const body = "Hello Talha,%0A%0AI would like to contact you regarding your services.%0A%0AThanks!";
+
+            window.open(
+                `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`,
+                "_blank"
+            );
+        }
+
+        function openWhatsApp() {
+            const phone = "923255193936";
+            const message = "Hello Talha,%0A%0AI would like to contact you regarding your services.%0A%0AThanks!";
+
+            window.open(
+                `https://wa.me/${phone}?text=${message}`,
+                "_blank"
+            );
+        }
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6936b49ff12e97197d5eb8cd/1jbur34aq';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <!-- ================= BACK TO TOP BUTTON ================= -->
+    <button id="backToTopBtn" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <style>
+        /* Back to top button */
+        #backToTopBtn {
+            position: fixed;
+            left: 20px;
+            bottom: 30px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--my-main-color);
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        #backToTopBtn:hover {
+            transform: translateY(-4px);
+            background-color: #9333ea;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            #backToTopBtn {
+                left: 15px;
+                bottom: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const backToTopBtn = document.getElementById("backToTopBtn");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.display = "block";
+                } else {
+                    backToTopBtn.style.display = "none";
+                }
+            });
+
+            backToTopBtn.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+    <!-- ===================================================== -->
+
+
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- typed js  -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- custom js   -->
+    <script src="./index.js"></script>
+
+    <!-- for email button/ -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <!-- for testimonials  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+
+</body>
+
+</html>
